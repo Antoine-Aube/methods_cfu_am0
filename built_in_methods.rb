@@ -6,22 +6,28 @@
 # The downcase method is called on the string object "Hello World"
 # No arguments are passed; downcase has one clear job which is to lowercase all letters that exist in the String
 # The return value is "hello world"
-"Hello World".downcase
+p "Hello World".downcase
+
+# the include? method is called the string object, a string argument is passed.
+# The return value is a boolean: true
+p "Hello World".include?("Hello")
+
+#the end_with? method is called on the string object, a string argument is passed. 
+#the return value is a boolean: false
+p "Hello World".end_with?("Hello")
+
+#the end_with? method is called on the string object, a string argument is passed. 
+#the return value is a boolean: true
+p "Hello World".end_with?("rld")
 
 
-"Hello World".include?("Hello")
+#the even? method is called on the integer object, no arguments are passed. 
+# the return value is a boolean: true
+p 12.even?
 
-
-"Hello World".end_with?("Hello")
-
-
-"Hello World".end_with?("rld")
-
-
-12.even?
-
-
-18.next
+#the next method is called on the integer object, no arguments are passed
+#the return value is an interger: 19
+p 18.next
 
 
 
@@ -39,6 +45,19 @@
 first_name = "Jeff"
 puts first_name.start_with?("J")
 
+previous_employer = "The Front Climbing Club"
+
+expensive_grocery_store = "Liberty Heights fresh"
+
+# this calls the .chars method on the string objects, no arguments are passed
+# the return is an array consisting of all the individual  characters of the string
+
+p previous_employer.chars
+
+
+#this calls the partition method on the string object, an argument of a character is passed
+# The return value is an array 3-element array of substrings
+p expensive_grocery_store.partition("H")
 
 
 # SECTION 3: Calling methods on variables assigned to integers.
@@ -47,6 +66,18 @@ puts first_name.start_with?("J")
 # https://ruby-doc.org/core-3.1.0/Integer.html
 # Include comments above each method call explaining the impact and return value of that method.
 
+age = 31
+
+types_of_cheeses_in_my_fridge = 7.75
+
+#This invokes the predecessor method on the age variable. I have a hard enough time remembering what age I currently am, let alone what age I was last year. 
+p age.pred
+
+#This invokes the round method on the types of cheese I have in my fridge. I have a a bag of a mixed blend represent by the .75 in the float so technically 8 if we're going by the packaging. 
+p types_of_cheeses_in_my_fridge.round
+
+
+
 
 
 # SECTION 4: Calling methods on variables assigned to arrays.
@@ -54,3 +85,18 @@ puts first_name.start_with?("J")
 # Call a different built-in Ruby method on each of your variables. 
 # https://ruby-doc.org/core-3.1.0/Array.html
 # Include comments above each method call explaining the impact and return value of that method.
+
+
+ingredients = ["Almond", "olive oil", "sugar", "yeast", "eggs"]
+
+least_favorite_numbers = [2, 12, 45, 78]
+
+#My girlfriend is celiac so I want to see if any of these these ingredients are wheat.  The .include? method is called on my ingredients array to make sure she doesn't get seriously ill. 
+p ingredients.include?("wheat")
+
+#The minmax method is called on my least_favorite_numbers array to see what is the highest and lowest integer in the array. I wonder what it does to strings? 
+p least_favorite_numbers.minmax
+
+#It returns the min according to the alphabet with A being the first letter in the alphabet so "Almond" and y being the closest to last letter in the alphabet so "yeast" being the max. I'm pretty sure this also does this also based on capitalization, will check in docs. 
+p ingredients.minmax
+
